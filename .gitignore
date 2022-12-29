@@ -1,0 +1,6 @@
+.env
+files/
+*log.txt
+config.py
+*.pyc
+.idea
