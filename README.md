@@ -1,6 +1,6 @@
 # s3downloader
 
-Download from S3 in threads or processes.
+Parallel downloading from S3 in threads or processes.
 
 Just use `download_parallel_multithreading()` for threads or `download_parallel_multiprocessing()` for processes.
 
