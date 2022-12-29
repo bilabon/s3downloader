@@ -81,7 +81,7 @@ def download_parallel_multiprocessing(keys_to_download: set) -> tuple[str, str]:
                 yield key, exception
 
 
-def get_all_s3filenames() -> set:
+def get_all_s3filenames_from_db() -> set:
     """Get and return set of file names for downloading"""
     try:
         logger_debug.debug("MySQL connection is opening")
@@ -118,17 +118,17 @@ if __name__ == "__main__":
     if not os.path.exists(LOCAL_DOWNLOAD_FOLDER):
         os.makedirs(LOCAL_DOWNLOAD_FOLDER)
 
-    _keys_to_download = get_all_s3filenames()
-    len_keys = len(_keys_to_download)
+    filenames_to_download = get_all_s3filenames_from_db()
+    len_filenames = len(filenames_to_download)
 
     start_time = time.monotonic()
     success_counter = 0
-    for key, result in download_parallel_multithreading(_keys_to_download):
+    for key, result in download_parallel_multithreading(filenames_to_download):
         if result == "Success":
             success_counter += 1
             if success_counter % 100 == 0:
                 diff = time.monotonic() - start_time
-                logger_debug.debug(f'> {success_counter} of {len_keys} succeeded, time: {diff}')
+                logger_debug.debug(f'> {success_counter} of {len_filenames} succeeded, time: {diff}')
             logger_info.info(f"{key} result: {result}")
         else:
             logger_error.error(f"{key} result: {result}")
