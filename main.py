@@ -13,9 +13,10 @@ if __name__ == "__main__":
     setup_logger("log_error", "error.log.txt")
     setup_logger("log_debug", "debug.log.txt")
 
-    import shutil
-
-    shutil.rmtree(LOCAL_DOWNLOAD_FOLDER)
+    # delete local directory for files
+    if os.path.exists(LOCAL_DOWNLOAD_FOLDER):
+        import shutil
+        shutil.rmtree(LOCAL_DOWNLOAD_FOLDER)
 
     # created local directory for files
     if not os.path.exists(LOCAL_DOWNLOAD_FOLDER):
