@@ -1,8 +1,12 @@
 # s3downloader
 
-Parallel downloading from S3 in threads or processes.
+Parallel downloader from S3.
 
-Just use `download_parallel_multithreading()` for threads or `download_parallel_multiprocessing()` for processes.
+Just use (check in main.py):
+- `run_parallel_multithreading()` for threads
+- `run_parallel_multiprocessing()` for processes
+- `run_parallel_asyncio()` for asyncio
+- `run_parallel_process_asyncio()` for processes + asyncio
 
 Setup:
 - use python3, tested with python3.11
