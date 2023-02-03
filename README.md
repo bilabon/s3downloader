@@ -2,7 +2,7 @@
 
 Parallel downloader from S3.
 
-Just use (check in main.py):
+Just use (check in [main.py](https://github.com/bilabon/s3downloader/blob/main/main.py)):
 - `run_parallel_multithreading()` for threads
 - `run_parallel_multiprocessing()` for processes
 - `run_parallel_asyncio()` for asyncio
