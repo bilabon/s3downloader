@@ -1,7 +1,7 @@
-# boto3
+boto3
 mysql-connector-python==8.0.31
 numpy
-aiobotocore
+# aiobotocore
 # awscli
 
 botocore

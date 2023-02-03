@@ -27,7 +27,7 @@ if __name__ == "__main__":
     #     # run_parallel_multithreading(filenames_to_download)
     #     # run_parallel_multiprocessing(list(filenames_to_download))
 
-    filenames_to_download = get_s3filenames_from_db(limit=10000, offset=0)
+    filenames_to_download = get_s3filenames_from_db(limit=100, offset=0)
 
     # 1) uncomment to run with multithreading
     run_parallel_multithreading(filenames_to_download)  # 1000 - 13.9 sec (250 workers); 10000 - 166 sec (250 workers)
