@@ -1,10 +1,10 @@
 import os
 
 from config import LOCAL_DOWNLOAD_FOLDER
-# from s3asyncio import run_parallel_asyncio
-# from s3pasyncio import run_parallel_process_asyncio
-# from s3process import run_parallel_multiprocessing
-from s3thread import run_parallel_multithreading
+# from s3downloader.s3asyncio import run_parallel_asyncio
+# from s3downloader.s3pasyncio import run_parallel_process_asyncio
+# from s3downloader.s3process import run_parallel_multiprocessing
+from s3downloader.s3thread import run_parallel_multithreading
 from tools.log import setup_logger
 from tools.sql import get_s3filenames_from_db
 
