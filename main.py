@@ -25,13 +25,13 @@ if __name__ == "__main__":
     filenames_to_download = get_s3filenames_from_db(limit=100, offset=0)
 
     # 1) uncomment to run with multithreading
-    run_parallel_multithreading(filenames_to_download)  # 1000 - 13.9 sec (250 workers); 10000 - 166 sec (250 workers)
+    run_parallel_multithreading(filenames_to_download)
 
     # 2) uncomment to run with multiprocessing
-    # run_parallel_multiprocessing(list(filenames_to_download))  # 1000 - 22 sec (250 workers)
+    # run_parallel_multiprocessing(list(filenames_to_download))
 
     # 3) uncomment to run with asyncio
-    # run_parallel_asyncio(filenames_to_download)  # 1000 - 24 sec
+    # run_parallel_asyncio(filenames_to_download)
 
     # 4) uncomment to run with asyncio and multiprocessing
-    # run_parallel_process_asyncio(filenames_to_download)  # 1000 - 13 sec; 10000 - 223 sec
+    # run_parallel_process_asyncio(filenames_to_download)
