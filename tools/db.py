@@ -21,7 +21,8 @@ def get_s3filenames_from_db(limit: int, offset: int) -> set:
             password=DB_PASSWORD,
         )
         logger_debug.debug("MySQL connection is opened")
-        sql = f"SELECT hash_file_name FROM web_products_order_files WHERE file_status_id=6 LIMIT {limit} OFFSET {offset};"
+        # sql = f"SELECT hash_file_name FROM web_products_order_files WHERE file_status_id=6 LIMIT {limit} OFFSET {offset};"
+        sql = f"SELECT hash_file_name FROM web_products_order_files WHERE file_status_id=6 and file_time >= 1640995200 limit 1000;"
         cursor = connection.cursor()
         cursor.execute(sql)
         # get all records

@@ -1,12 +1,12 @@
 import os
 
 from config import LOCAL_DOWNLOAD_FOLDER
-# from core.s3asyncio import run_parallel_asyncio
-# from core.s3pasyncio import run_parallel_process_asyncio
-# from core.s3process import run_parallel_multiprocessing
-from core.s3thread import run_parallel_multithreading
+# from services.s3asyncio import run_parallel_asyncio
+# from services.s3pasyncio import run_parallel_process_asyncio
+# from services.s3process import run_parallel_multiprocessing
+from services.s3thread import run_parallel_multithreading
 from tools.log import setup_logger
-from tools.sql import get_s3filenames_from_db
+from tools.db import get_s3filenames_from_db
 
 if __name__ == "__main__":
     setup_logger("log_info", "info.log.txt")
@@ -21,12 +21,6 @@ if __name__ == "__main__":
     # created local directory for files
     if not os.path.exists(LOCAL_DOWNLOAD_FOLDER):
         os.makedirs(LOCAL_DOWNLOAD_FOLDER)
-
-    # # TODO: use numpy.array_split https://appdividend.com/2022/05/30/how-to-split-list-in-python/
-    # download_list = numpy.array_split(list(get_s3filenames_from_db(limit=1000, offset=0)), 4)
-    # for filenames_to_download in download_list:
-    #     # run_parallel_multithreading(filenames_to_download)
-    #     # run_parallel_multiprocessing(list(filenames_to_download))
 
     filenames_to_download = get_s3filenames_from_db(limit=100, offset=0)
 
