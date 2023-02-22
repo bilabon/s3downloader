@@ -8,6 +8,7 @@ from services.s3thread import run_parallel_multithreading
 from tools.log import setup_logger
 from tools.db import get_s3filenames_from_db
 
+
 if __name__ == "__main__":
     setup_logger("log_info", "info.log.txt")
     setup_logger("log_error", "error.log.txt")

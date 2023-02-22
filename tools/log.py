@@ -1,7 +1,7 @@
 import logging
 
 
-def setup_logger(logger_name, log_file, level=logging.WARNING):
+def setup_logger(logger_name, log_file, level=logging.DEBUG):
     _logger = logging.getLogger(logger_name)
     formatter = logging.Formatter('%(message)s')
     fileHandler = logging.FileHandler(log_file, mode='w')
