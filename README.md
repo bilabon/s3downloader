@@ -2,11 +2,11 @@
 
 Parallel downloader from S3.
 
-Just use (check in [main.py](https://github.com/bilabon/s3downloader/blob/main/main.py)):
-- `run_parallel_multithreading()` for threads
-- `run_parallel_multiprocessing()` for processes
-- `run_parallel_asyncio()` for asyncio
-- `run_parallel_process_asyncio()` for processes + asyncio
+Here are 4 options for downloading files from Amazon S3. Just use (check in [main.py](https://github.com/bilabon/s3downloader/blob/main/main.py)):
+1. `run_parallel_multithreading()` for threads
+2. `run_parallel_multiprocessing()` for processes
+3. `run_parallel_asyncio()` for asyncio
+4. `run_parallel_process_asyncio()` for processes + asyncio
 
 Setup:
 - use python3, tested with python3.11
